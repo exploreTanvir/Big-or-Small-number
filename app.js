@@ -1,14 +1,20 @@
 function evenOrOdd() {
-  var first = document.getElementById("itemOne").value;
-  var second = document.getElementById("itemTwo").value;
-  var third = document.getElementById("itemThree").value;
+  var first = parseInt(document.getElementById("itemOne").value);
+  var second = parseInt(document.getElementById("itemTwo").value);
+  var third = parseInt(document.getElementById("itemThree").value);
   var output = document.getElementById("result");
 
-  if (first > second && first > third) {
-    output.value = "First number is big";
-  } else if (second > first && second > third) {
-    output.value = "Second number is big";
+  if (first > second) {
+    if (first > third) {
+      output.value = "First number is big";
+    } else {
+      output.value = "Third number is big";
+    }
   } else {
-    output.value = "Third number is big";
+    if (second > third) {
+      output.value = "second number is big";
+    } else {
+      output.value = "Third number is big";
+    }
   }
 }
